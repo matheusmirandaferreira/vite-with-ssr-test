@@ -11,6 +11,7 @@ import {
 } from './components/ui/table';
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -18,6 +19,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from './components/ui/dialog';
+import { Label } from './components/ui/label';
 
 export function App() {
   return (
@@ -48,18 +50,23 @@ export function App() {
               </DialogDescription>
             </DialogHeader>
 
-            <form>
-              <div className='flex flex-col gap-4 mb-4'>
-                <Input name='test' />
-                <Input name='test' />
-                <Input name='test' />
-                <Input name='test' />
+            <form className='space-y-6'>
+              <div className='grid grid-cols-4 items-center text-right gap-3'>
+                <Label htmlFor='name'>Produto</Label>
+                <Input id='name' className='col-span-3' />
+              </div>
+
+              <div className='grid grid-cols-4 items-center text-right gap-3'>
+                <Label htmlFor='price'>Preço</Label>
+                <Input id='price' className='col-span-3' />
               </div>
 
               <DialogFooter>
-                <Button type='button' variant={'outline'}>
-                  Cancelar
-                </Button>
+                <DialogClose asChild>
+                  <Button type='button' variant={'outline'}>
+                    Cancelar
+                  </Button>
+                </DialogClose>
                 <Button type='submit'>Salvar</Button>
               </DialogFooter>
             </form>
