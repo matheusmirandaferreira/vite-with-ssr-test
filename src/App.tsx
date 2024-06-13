@@ -77,15 +77,17 @@ export function App() {
       <div className="border rounded-lg p-2">
         <Table>
           <TableHeader>
-            <TableHead>ID</TableHead>
-            <TableHead>Produto</TableHead>
-            <TableHead>Preço</TableHead>
+            <TableRow>
+              <TableHead>ID</TableHead>
+              <TableHead>Produto</TableHead>
+              <TableHead>Preço</TableHead>
+            </TableRow>
           </TableHeader>
           <TableBody>
             {Array.from({ length: 25 }).map((_, index) => (
               <TableRow key={index}>
-                <TableCell>{Math.random().toFixed()}</TableCell>
-                <TableCell>Produto {index}</TableCell>
+                <TableCell>{index + 1}</TableCell>
+                <TableCell>Produto {index + 1}</TableCell>
                 <TableCell>
                   R$ {(Math.random() * (index + 1)).toFixed()},00
                 </TableCell>
